@@ -2,7 +2,17 @@
 
 This is a project for nabdemo
 
-# Design project
+# System Design Architect
+
+From the requirements, I will create 4 main components:
+MS1: Eureka Registry
+MS2: Zuul Gateway & CMS Admin Portal
+MS3: Product Service
+MS4: Cart Service 
+
+![System Design](https://github.com/dqvn/nabdemo/blob/master/imgs/System-Architect.png)
+
+# Design ERD
 
 Read requirements and do design & sperate components based on JDL-Studio
 ![Read requirements and do design compose on JDL-Studio](https://github.com/dqvn/nabdemo/blob/master/imgs/ERD_final.png)

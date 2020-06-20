@@ -208,7 +208,7 @@ In case you have correct credential input, Okta is going to redirect you to Gate
 
 # ECommerce API documentation framework
 
-To support us have full picture about what API (CRUD) format/template from rest api. I use the Swagger to control all API to be updated automatically from source code as this screen shot:
+To support us having a full picture about all APIs (CRUD) format/template from rest api. I used the Swagger to control all API to be updated automatically from source code as this screen shot:
 
 ![Swagger](https://github.com/dqvn/nabdemo/blob/master/imgs/product-api-document.png)
 

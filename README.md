@@ -202,7 +202,7 @@ If this is the first time you login, it will redirect you to the Okta website (O
 
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-CMS-login.png)
 
-Check the Gateway Status
+In case you have correct credential input, Okta is going to redirect you to Gateway Status, and you could check the gateway status as below:
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-status.png)
 
 # Demonstration Code:

@@ -205,6 +205,13 @@ If this is the first time you login, it will redirect you to the Okta website (O
 In case you have correct credential input, Okta is going to redirect you to Gateway Status, and you could check the gateway status as below:
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-status.png)
 
+
+# ECommerce API documentation framework
+
+To support us have full picture about what API (CRUD) format/template from rest api. I use the Swagger to control all API to be updated automatically from source code as this screen shot:
+
+![Swagger](https://github.com/dqvn/nabdemo/blob/master/imgs/product-api-document.png)
+
 # Demonstration Code:
 
 ----------------------------------------------------------

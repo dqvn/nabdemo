@@ -435,3 +435,6 @@ I am going to check whether the Current Product Price change, then I will clone 
 After many product update, the results is below:
 ![Product Price Update Rule](https://github.com/dqvn/nabdemo/blob/master/imgs/productPrizeUpdateRule.png)
 
+And the DB Entity log as below:
+
+![Product Price Update Log](https://github.com/dqvn/nabdemo/blob/master/imgs/productPrizeUpdateLog.png)

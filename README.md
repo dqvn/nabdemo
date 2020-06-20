@@ -5,10 +5,10 @@ This is a project for nabdemo
 # System Design Architect
 
 From the requirements, I will create 4 main components:
-MS1: Eureka Registry
-MS2: Zuul Gateway & CMS Admin Portal
-MS3: Product Service
-MS4: Cart Service 
+	MS1: Eureka Registry
+	MS2: Zuul Gateway & CMS Admin Portal
+	MS3: Product Service
+	MS4: Cart Service 
 
 ![System Design](https://github.com/dqvn/nabdemo/blob/master/imgs/System-Architect-a.png)
 

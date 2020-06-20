@@ -116,8 +116,8 @@ v12.18.0
 
 1. Run Registry (Eureka) and open localhost:8761 with proposed account
 ----------------------------------------------------------
-cd ${PROJECT_HOME}
-java -jar jhipster-registry-6.2.0.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=ZDgyOWIxNmU1MGY3MDc4NTFjNzM0ZjM0OGI2YWY1MjJkZTM3Mjk1MDM4MmEyN2IyMzYxZDMyMWIyMzg0ZTYwZjBmYTQzOTg4MzE4ODk2M2EzOTg5YmVmYjAwMDZlZDU5NjRiNzBlY2ZjMGU0NjFlOWU0YWNjNjZjMDY2OTZlZTA= --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.native.search.location=file:./central-config
+	cd ${PROJECT_HOME}
+	java -jar jhipster-registry-6.2.0.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=ZDgyOWIxNmU1MGY3MDc4NTFjNzM0ZjM0OGI2YWY1MjJkZTM3Mjk1MDM4MmEyN2IyMzYxZDMyMWIyMzg0ZTYwZjBmYTQzOTg4MzE4ODk2M2EzOTg5YmVmYjAwMDZlZDU5NjRiNzBlY2ZjMGU0NjFlOWU0YWNjNjZjMDY2OTZlZTA= --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.native.search.location=file:./central-config
 ----------------------------------------------------------
 
 Output:
@@ -136,8 +136,8 @@ Output:
 
 2. Run Product Service
 ----------------------------------------------------------
-cd ${PROJECT_HOME}/product
-./mvnw
+	cd ${PROJECT_HOME}/product
+	./mvnw
 ----------------------------------------------------------
 
 Output:
@@ -150,8 +150,8 @@ Output:
 
 3. Run Cart Service
 ----------------------------------------------------------
-cd ${PROJECT_HOME}/cart
-./mvnw
+	cd ${PROJECT_HOME}/cart
+	./mvnw
 ----------------------------------------------------------
 
 Output:
@@ -164,8 +164,8 @@ Output:
 
 4. Run Gateway (Zuul) and open localhost:8080 with proposed account
 ----------------------------------------------------------
-cd ${PROJECT_HOME}/gateway
-./mvnw
+	cd ${PROJECT_HOME}/gateway
+	./mvnw
 ----------------------------------------------------------
 Login with Okta
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-CMS-login.png)

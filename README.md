@@ -266,65 +266,71 @@ Check the Gateway Status
 	--data-raw '{"placedDate":"2020-06-18T17:00:00.000Z","status":"PENDING","code":"ORDER002","customer":"admin"}'
 
 	response
-{
-  "createdBy" : "system",
-  "createdDate" : "2020-06-19T02:53:02.293691Z",
-  "lastModifiedBy" : "system",
-  "lastModifiedDate" : "2020-06-19T02:53:02.293691Z",
-  "id" : 13,
-  "placedDate" : "2020-06-18T17:00:00Z",
-  "status" : "PENDING",
-  "code" : "ORDER002",
-  "customer" : "admin",
-  "orderItems" : [ ]
-}
+	{
+	  "createdBy" : "system",
+	  "createdDate" : "2020-06-19T02:53:02.293691Z",
+	  "lastModifiedBy" : "system",
+	  "lastModifiedDate" : "2020-06-19T02:53:02.293691Z",
+	  "id" : 13,
+	  "placedDate" : "2020-06-18T17:00:00Z",
+	  "status" : "PENDING",
+	  "code" : "ORDER002",
+	  "customer" : "admin",
+	  "orderItems" : [ ]
+	}
 
-Step 5: add Items to the cart order
-curl -L -X POST 'http://localhost:8080/services/cart/api/order-items' \
--H 'Authorization: Bearer eyJraWQiOiJxZm9PT3Vyc3JVTl9rUDJxbXFLSFo5OTJ2amZ5WFNXZW94VlphVU1sdEFBIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm1NZWJzV3N5U29JSFF5M2twVklxT2RuSHA2SWo1RWtuRlRkellTY2Nqa1kiLCJpc3MiOiJodHRwczovL3RhcHRhcC1jb20ub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTkyNTM1MDkwLCJleHAiOjE1OTI1Mzg2OTAsImNpZCI6IjBvYWZudzBhcEVOaWxCM2tHNHg2IiwidWlkIjoiMDB1Zm53amc1bmNYbUJpOEY0eDYiLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6ImFkbWluQGdtYWlsLmNvbSIsImdyb3VwcyI6WyJFdmVyeW9uZSIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXX0.KFNazww42k0UUsdoOV7TI1Wu9z0o4WNr9W6SF4fcGE0f-uUt5VEmLreUDAIq46NLISBGYLX5vhUqk661cDEIachUcmp040C7tBC7YNPAjf0Sy8yAihB0QkONCHd3zIfHS8wH27wnu7gWqlLgHiw7nkX1mYVacEnP0qMGZJMGGdYOZrp1J-tHwJVuFm5AlzQD4L7Sn8693Q6ztYqmAXtRHq8cOpMY7G1Prli5XPPcVrfLQI39R0eZyhllhIF6aU-s5AZITwM3VMNTQ4gTnGScZUgoStrkwki5DAlLFhwdjwStcQzQZLBNybYKu5ZrDFfvVd0ispKREHeIf3sv6DLrQA' \
--H 'Content-Type: application/json;charset=UTF-8' \
---data-raw '{"quantity":"5","totalPrice":"0","status":"AVAILABLE","productName":"Thoi trang nguoi lon","order":{"id":"13"}}'
 
-response
-{
-  "createdBy" : "system",
-  "createdDate" : "2020-06-19T02:59:26.905959Z",
-  "lastModifiedBy" : "system",
-  "lastModifiedDate" : "2020-06-19T02:59:26.905959Z",
-  "id" : 11,
-  "quantity" : 5,
-  "totalPrice" : 50000,
-  "status" : "AVAILABLE",
-  "productName" : "Thoi trang tre em",
-  "order" : {
-    "createdBy" : null,
-    "createdDate" : "2020-06-19T02:59:26.885877Z",
-    "lastModifiedBy" : null,
-    "lastModifiedDate" : "2020-06-19T02:59:26.885878Z",
-    "id" : 13,
-    "placedDate" : null,
-    "status" : null,
-    "code" : null,
-    "customer" : null
-  }
-}
+----------------------------------------------------------
+	Step 5: add Items to the cart order
+	curl -L -X POST 'http://localhost:8080/services/cart/api/order-items' \
+	-H 'Authorization: Bearer eyJraWQiOiJxZm9PT3Vyc3JVTl9rUDJxbXFLSFo5OTJ2amZ5WFNXZW94VlphVU1sdEFBIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm1NZWJzV3N5U29JSFF5M2twVklxT2RuSHA2SWo1RWtuRlRkellTY2Nqa1kiLCJpc3MiOiJodHRwczovL3RhcHRhcC1jb20ub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTkyNTM1MDkwLCJleHAiOjE1OTI1Mzg2OTAsImNpZCI6IjBvYWZudzBhcEVOaWxCM2tHNHg2IiwidWlkIjoiMDB1Zm53amc1bmNYbUJpOEY0eDYiLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6ImFkbWluQGdtYWlsLmNvbSIsImdyb3VwcyI6WyJFdmVyeW9uZSIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXX0.KFNazww42k0UUsdoOV7TI1Wu9z0o4WNr9W6SF4fcGE0f-uUt5VEmLreUDAIq46NLISBGYLX5vhUqk661cDEIachUcmp040C7tBC7YNPAjf0Sy8yAihB0QkONCHd3zIfHS8wH27wnu7gWqlLgHiw7nkX1mYVacEnP0qMGZJMGGdYOZrp1J-tHwJVuFm5AlzQD4L7Sn8693Q6ztYqmAXtRHq8cOpMY7G1Prli5XPPcVrfLQI39R0eZyhllhIF6aU-s5AZITwM3VMNTQ4gTnGScZUgoStrkwki5DAlLFhwdjwStcQzQZLBNybYKu5ZrDFfvVd0ispKREHeIf3sv6DLrQA' \
+	-H 'Content-Type: application/json;charset=UTF-8' \
+	--data-raw '{"quantity":"5","totalPrice":"0","status":"AVAILABLE","productName":"Thoi trang nguoi lon","order":{"id":"13"}}'
+	
+	response
+	{
+	  "createdBy" : "system",
+	  "createdDate" : "2020-06-19T02:59:26.905959Z",
+	  "lastModifiedBy" : "system",
+	  "lastModifiedDate" : "2020-06-19T02:59:26.905959Z",
+	  "id" : 11,
+	  "quantity" : 5,
+	  "totalPrice" : 50000,
+	  "status" : "AVAILABLE",
+	  "productName" : "Thoi trang tre em",
+	  "order" : {
+	    "createdBy" : null,
+	    "createdDate" : "2020-06-19T02:59:26.885877Z",
+	    "lastModifiedBy" : null,
+	    "lastModifiedDate" : "2020-06-19T02:59:26.885878Z",
+	    "id" : 13,
+	    "placedDate" : null,
+	    "status" : null,
+	    "code" : null,
+	    "customer" : null
+	  }
+	}
+----------------------------------------------------------
 
-Step 6: after all item adding to cart in step 5, user press order button and confirm then the api update order status to COMPLETED
-curl -L -X PUT 'http://localhost:8080/services/cart/api/product-orders' \
--H 'Authorization: Bearer eyJraWQiOiJxZm9PT3Vyc3JVTl9rUDJxbXFLSFo5OTJ2amZ5WFNXZW94VlphVU1sdEFBIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULjNSLS1hc1hJbHYxNVg5dWM2QW9kTVZoLVA5WFRnZVlJT3hZdDN3WjlMOWsiLCJpc3MiOiJodHRwczovL3RhcHRhcC1jb20ub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTkyNTQ2NzcwLCJleHAiOjE1OTI1NTAzNzAsImNpZCI6IjBvYWZudzBhcEVOaWxCM2tHNHg2IiwidWlkIjoiMDB1Zm53amc1bmNYbUJpOEY0eDYiLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6ImFkbWluQGdtYWlsLmNvbSIsImdyb3VwcyI6WyJFdmVyeW9uZSIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXX0.IEPhmXuG_jwScyS50rGpGX_8fHjbOTI82CCkiDfiRRbzxCRLCfvAcECcjNooajXvCt5uq7mE1q36a9DBP-5o_6jeJSFYs5h21SMD_KU-j6WFLyMtD1V2anWKcnLLRo9QTp3a4vf2NL4qak3fRGCT3jWUL0ArXj66BtQO_pedAvjBEXVxIZ2hGp4GgdidmpOtV79-mFGW4AmKAeHqQ-RWzxflph93bE9dCn3REsYrhqh2Zxng9YlcRR8CBCJMnfAFr-2OAux2_BLYlZWeFCZLM63LeiNxKOV5_ylLQFxxVZxKxohcAdpY3c8RpnUh9pBhmP3ZdC253eET1WLb2ldXeQ' \
--H 'Content-Type: application/json;charset=UTF-8' \
---data-raw '{"id":13,"status":"COMPLETED","customer": "admin","placedDate": "2020-06-19T02:59:26.905959Z","code": "ORDER003","createdBy" : "system"}'
+----------------------------------------------------------
+	Step 6: after all item adding to cart in step 5, user press order button and confirm then the api update order status to COMPLETED
+	curl -L -X PUT 'http://localhost:8080/services/cart/api/product-orders' \
+	-H 'Authorization: Bearer eyJraWQiOiJxZm9PT3Vyc3JVTl9rUDJxbXFLSFo5OTJ2amZ5WFNXZW94VlphVU1sdEFBIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULjNSLS1hc1hJbHYxNVg5dWM2QW9kTVZoLVA5WFRnZVlJT3hZdDN3WjlMOWsiLCJpc3MiOiJodHRwczovL3RhcHRhcC1jb20ub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTkyNTQ2NzcwLCJleHAiOjE1OTI1NTAzNzAsImNpZCI6IjBvYWZudzBhcEVOaWxCM2tHNHg2IiwidWlkIjoiMDB1Zm53amc1bmNYbUJpOEY0eDYiLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6ImFkbWluQGdtYWlsLmNvbSIsImdyb3VwcyI6WyJFdmVyeW9uZSIsIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXX0.IEPhmXuG_jwScyS50rGpGX_8fHjbOTI82CCkiDfiRRbzxCRLCfvAcECcjNooajXvCt5uq7mE1q36a9DBP-5o_6jeJSFYs5h21SMD_KU-j6WFLyMtD1V2anWKcnLLRo9QTp3a4vf2NL4qak3fRGCT3jWUL0ArXj66BtQO_pedAvjBEXVxIZ2hGp4GgdidmpOtV79-mFGW4AmKAeHqQ-RWzxflph93bE9dCn3REsYrhqh2Zxng9YlcRR8CBCJMnfAFr-2OAux2_BLYlZWeFCZLM63LeiNxKOV5_ylLQFxxVZxKxohcAdpY3c8RpnUh9pBhmP3ZdC253eET1WLb2ldXeQ' \
+	-H 'Content-Type: application/json;charset=UTF-8' \
+	--data-raw '{"id":13,"status":"COMPLETED","customer": "admin","placedDate": "2020-06-19T02:59:26.905959Z","code": "ORDER003","createdBy" : "system"}'
+	
+	response
+	{
+	  "createdBy" : "system",
+	  "createdDate" : "2020-06-19T02:53:02.293691Z",
+	  "lastModifiedBy" : "system",
+	  "lastModifiedDate" : "2020-06-19T03:08:11.042508Z",
+	  "id" : 13,
+	  "placedDate" : "2020-06-18T17:00:00Z",
+	  "status" : "COMPLETED",
+	  "code" : "ORDER002",
+	  "customer" : "admin",
+	  "orderItems" : null
+	}
+----------------------------------------------------------
 
-response
-{
-  "createdBy" : "system",
-  "createdDate" : "2020-06-19T02:53:02.293691Z",
-  "lastModifiedBy" : "system",
-  "lastModifiedDate" : "2020-06-19T03:08:11.042508Z",
-  "id" : 13,
-  "placedDate" : "2020-06-18T17:00:00Z",
-  "status" : "COMPLETED",
-  "code" : "ORDER002",
-  "customer" : "admin",
-  "orderItems" : null
-}

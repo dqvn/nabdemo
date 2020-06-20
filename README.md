@@ -368,9 +368,9 @@ By default, all login log will be store in db as below
 
 For audit support, all customers' activities such as searching, filtering and viewing product's details need to be stored in the database. However, failure to store customer activity is completely transparent to customer and should has no impact to the activity itself.
 
-Step 1: login to http://localhost:8081/h2-console/login.do?jsessionid=967bb2321a3031ff9f6015288cf3d243
-Step 2: login with sa account (no password)
-Step 3: query "SELECT * FROM JHI_ENTITY_AUDIT_EVENT order by id desc;"
+	Step 1: login to http://localhost:8081/h2-console/login.do?jsessionid=967bb2321a3031ff9f6015288cf3d243
+	Step 2: login with sa account (no password)
+	Step 3: query "SELECT * FROM JHI_ENTITY_AUDIT_EVENT order by id desc;"
 
 This will show all Entity Audit log (VIEW, UPDATE, CREATE, DELETE events)
 

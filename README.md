@@ -10,7 +10,7 @@ MS2: Zuul Gateway & CMS Admin Portal
 MS3: Product Service
 MS4: Cart Service 
 
-![System Design](https://github.com/dqvn/nabdemo/blob/master/imgs/System-Architect-new.png)
+![System Design](https://github.com/dqvn/nabdemo/blob/master/imgs/System-Architect.png)
 
 # Design ERD
 

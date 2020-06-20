@@ -1,0 +1,14 @@
+{
+  "gatewayApp": {
+    "ProductBrand": {
+      "null": "",
+      "JUNO": "JUNO",
+      "LV": "LV",
+      "KAFPA": "KAFPA",
+      "CROSS": "CROSS",
+      "NOUS": "NOUS",
+      "JK": "JK",
+      "ADV": "ADV"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "gatewayApp": {
+    "ProductColor": {
+      "null": "",
+      "RED": "RED",
+      "GREEN": "GREEN",
+      "YELLOW": "YELLOW",
+      "GREY": "GREY",
+      "WHITE": "WHITE",
+      "ORANGE": "ORANGE"
+    }
+  }
+}

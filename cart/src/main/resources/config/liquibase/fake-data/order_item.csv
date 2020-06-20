@@ -1,0 +1,11 @@
+id;quantity;total_price;status;product_name;order_id
+1;12024;32637;OUT_OF_STOCK;revolutionary Fork;1
+2;84545;13171;AVAILABLE;program;2
+3;39752;73868;BACK_ORDER;Intelligent;3
+4;85412;68168;BACK_ORDER;Martinique 24/7 architectures;4
+5;91194;76189;BACK_ORDER;virtual e-markets;5
+6;26162;17350;BACK_ORDER;Buckinghamshire;6
+7;60229;44582;BACK_ORDER;payment;7
+8;33759;2027;BACK_ORDER;empower reboot invoice;8
+9;58954;90947;AVAILABLE;index turn-key next generation;9
+10;18351;31897;AVAILABLE;navigating;10

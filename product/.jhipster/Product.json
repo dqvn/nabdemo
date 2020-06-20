@@ -1,0 +1,62 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "brand",
+      "fieldType": "ProductBrand",
+      "fieldValues": "JUNO,LV,KAFPA,CROSS,NOUS,JK,ADV",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "productColor",
+      "fieldType": "ProductColor",
+      "fieldValues": "RED,GREEN,YELLOW,GREY,WHITE,ORANGE",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "productSize",
+      "fieldType": "Size",
+      "fieldValues": "S,M,L,XL,XXL"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ProductStatus",
+      "fieldValues": "CURRENT,OUTDATE",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "productCategory",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "productCategory",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200618080240",
+  "javadoc": "Product sold by the Online store",
+  "entityTableName": "product",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["gateway", "product"],
+  "microserviceName": "product",
+  "enableEntityAudit": true
+}

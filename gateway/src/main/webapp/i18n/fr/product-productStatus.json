@@ -1,0 +1,9 @@
+{
+  "gatewayApp": {
+    "ProductStatus": {
+      "null": "",
+      "CURRENT": "CURRENT",
+      "OUTDATE": "OUTDATE"
+    }
+  }
+}

@@ -377,5 +377,15 @@ This will show all Entity Audit log (VIEW, UPDATE, CREATE, DELETE events)
 ![Product Entity Activity Audits]((https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditLog.png)
 
 To help me do this, I wrote a class (EntityAuditEventListener.java) based on PostLoad, PostCreate, PostUpdate events from java.persistence.* class
+By using try-catch, it will not affect to user behavior while using the application whenever the log events is fail or broken.
 
 ![EntityAuditEventListener.java](https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditEventListener.png)
+
+# Filter, short and search for products based on different criteria such as name, price, brand, colour etc.
+
+From the API document (Swagger), I could do search, filter, sorting based on any kind of criteria what i need as below
+![product filtering](https://github.com/dqvn/nabdemo/blob/master/imgs/api-product-filter.png)
+
+As a result, you will have a curl call as below:
+
+	curl -X GET "http://localhost:8080/services/product/api/products?brand.equals=NOUS&brand.notEquals=KAFPA&id.lessThan=50&id.notEquals=20&price.greaterThan=300000&productColor.in=YELLOW&productColor.notIn=RED&productSize.notIn=M&size=10&sort=productSize%2Casc&status.in=CURRENT"

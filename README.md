@@ -101,16 +101,16 @@ v12.18.0
 
 # Technologies that are used in this project:
 
-1. Spring security: setting up OAuth2 with OpenID Connect (OIDC) by Okta. (I don't use Facebook because I cannot grant ROLEs for users)
-2. Using JSON Web Token (JWT) for all APIs security.
-3. Using Spring Data framework & Hibernate & Liquidbase framework for repositories as RESTful resources, entities, & repositories. 
-4. Spring Boot & Spring Framework with embedded servlet container
-5. Support Internationalization (i18n)
-6. Apply Testing tools – Jest and Protractor
-7. Using OpenAPI specification (Swagger) for all microservices documentations.
-8. For simple demonstration I use H2 SQL databases.
-9. Using ReactJs for CMS-Admin webpage (ecommerce gateway project).
-10. Apply microservices pattern with: Registry, Gateway, Product Service, & Cart Service
+	1. Spring security: setting up OAuth2 with OpenID Connect (OIDC) by Okta. (I don't use Facebook because I cannot grant ROLEs for users)
+	2. Using JSON Web Token (JWT) for all APIs security.
+	3. Using Spring Data framework & Hibernate & Liquidbase framework for repositories as RESTful resources, entities, & repositories. 
+	4. Spring Boot & Spring Framework with embedded servlet container
+	5. Support Internationalization (i18n)
+	6. Apply Testing tools – Jest and Protractor
+	7. Using OpenAPI specification (Swagger) for all microservices documentations.
+	8. For simple demonstration I use H2 SQL databases.
+	9. Using ReactJs for CMS-Admin webpage (ecommerce gateway project).
+	10. Apply microservices pattern with: Registry, Gateway, Product Service, & Cart Service
 
 # Build & run microservice project:
 
@@ -128,9 +128,10 @@ Output:
 	Profile(s): 	[composite, dev, swagger]
 ----------------------------------------------------------
 
-[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'product:466e8776e7e19b6b97e5412e23e7c270' already registered
-[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:b6b50b9231fb86b4687ac474265dce40' already registered
-[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'cart:e8d162b849e0493be4042a397b445c1c' already registered
+Registry log checking:
+	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'product:466e8776e7e19b6b97e5412e23e7c270' already registered
+	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:b6b50b9231fb86b4687ac474265dce40' already registered
+	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'cart:e8d162b849e0493be4042a397b445c1c' already registered
 
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Registry-status.png)
 

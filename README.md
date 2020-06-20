@@ -364,7 +364,7 @@ Check the Gateway Status
 
 By default, all login log will be store in db as below
 
-![Login Audits]((https://github.com/dqvn/nabdemo/blob/master/imgs/AuditLogin.png)
+![Login Audits](https://github.com/dqvn/nabdemo/blob/master/imgs/AuditLogin.png)
 
 For audit support, all customers' activities such as searching, filtering and viewing product's details need to be stored in the database. However, failure to store customer activity is completely transparent to customer and should has no impact to the activity itself.
 
@@ -374,7 +374,7 @@ Step 3: query "SELECT * FROM JHI_ENTITY_AUDIT_EVENT order by id desc;"
 
 This will show all Entity Audit log (VIEW, UPDATE, CREATE, DELETE events)
 
-![Product Entity Activity Audits]((https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditLog.png)
+![Product Entity Activity Audits](https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditLog.png)
 
 To help me do this, I wrote a class (EntityAuditEventListener.java) based on PostLoad, PostCreate, PostUpdate events from java.persistence.* class
 By using try-catch, it will not affect to user behavior while using the application whenever the log events is fail or broken.

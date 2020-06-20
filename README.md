@@ -1,11 +1,14 @@
 # nabdemo
+
 This is a project for nabdemo
 
 # Design project
+
 Read requirements and do design & sperate components based on JDL-Studio
 ![Read requirements and do design compose on JDL-Studio](https://github.com/dqvn/nabdemo/blob/master/imgs/ERD_final.png)
 
 # Modeling microservice entities in JDL: This is the full entities:
+
 /** Product sold by the Online store */
 entity Product {
     name String required
@@ -73,11 +76,13 @@ relationship OneToMany {
 }
 
 # Generate project by JH
-By my familiar with Microservices stacks and the freestyle requirement to use framework, thus I used the JH for quicly create project as image
+
+By my familiar with Microservices stacks and the freestyle requirement to use framework, thus I used the JH for quick creating project as image
 
 ![By my familiar with Microservices stacks and the freestyle requirement to use framework, thus I used the JH for quicly create project as image](https://github.com/dqvn/nabdemo/blob/master/imgs/JH-Project-structure.png)
 
 # Project Build environments
+
 JAVA & MAVEN:
 $ mvn -v
 Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T02:00:29+07:00)
@@ -105,5 +110,52 @@ v12.18.0
 7. Using OpenAPI specification (Swagger) for all microservices documentations.
 8. For simple demonstration I use H2 SQL databases.
 9. Using ReactJs for CMS-Admin webpage (ecommerce gateway project).
+10. Apply microservices pattern with: Registry, Gateway, Product Service, & Cart Service
 
-# 
+# Build & run microservice project:
+
+1. Run Registry (Eureka) and open localhost:8761 with proposed account
+cd ${PROJECT_HOME}
+java -jar jhipster-registry-6.2.0.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=ZDgyOWIxNmU1MGY3MDc4NTFjNzM0ZjM0OGI2YWY1MjJkZTM3Mjk1MDM4MmEyN2IyMzYxZDMyMWIyMzg0ZTYwZjBmYTQzOTg4MzE4ODk2M2EzOTg5YmVmYjAwMDZlZDU5NjRiNzBlY2ZjMGU0NjFlOWU0YWNjNjZjMDY2OTZlZTA= --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.native.search.location=file:./central-config
+
+Output:
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761/
+	External: 	http://127.0.0.1:8761/
+	Profile(s): 	[composite, dev, swagger]
+----------------------------------------------------------
+
+[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'product:466e8776e7e19b6b97e5412e23e7c270' already registered
+[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:b6b50b9231fb86b4687ac474265dce40' already registered
+[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'cart:e8d162b849e0493be4042a397b445c1c' already registered
+
+2. Run Gateway (Zuul) and open localhost:8080 with proposed account
+cd ${PROJECT_HOME}/gateway
+./mvnw
+
+
+
+3. Run Product Service
+cd ${PROJECT_HOME}/product
+./mvnw
+
+Output:
+----------------------------------------------------------
+	Application 'product' is running! Access URLs:
+	Local: 		http://localhost:8081/
+	External: 	http://127.0.0.1:8081/
+	Profile(s): 	[dev, swagger]
+----------------------------------------------------------
+
+4. Run Cart Service
+cd ${PROJECT_HOME}/cart
+./mvnw
+
+Output:
+----------------------------------------------------------
+	Application 'cart' is running! Access URLs:
+	Local: 		http://localhost:8082/
+	External: 	http://127.0.0.1:8082/
+	Profile(s): 	[dev, swagger]
+----------------------------------------------------------

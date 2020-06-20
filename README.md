@@ -389,3 +389,49 @@ From the API document (Swagger), I could do search, filter, sorting based on any
 As a result, you will have a curl call as below:
 
 	curl -X GET "http://localhost:8080/services/product/api/products?brand.equals=NOUS&brand.notEquals=KAFPA&id.lessThan=50&id.notEquals=20&price.greaterThan=300000&productColor.in=YELLOW&productColor.notIn=RED&productSize.notIn=M&status.in=CURRENT&page=1&size=10&sort=productSize%2Casc"
+
+# All product prices are subject to change at any time and the company wants to keep track of it.
+
+For this rule, I do optimize the Update event whenever the CURRENT product price will be updated.
+I am going to check whether the Current Product Price change, then I will clone this product to a new object with new price and keep the current object with old price & change to OUTDATE status
+
+	    /**
+	     * {@code PUT  /products} : Updates an existing product.
+	     *
+	     * @param product the product to update.
+	     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated product,
+	     * or with status {@code 400 (Bad Request)} if the product is not valid,
+	     * or with status {@code 500 (Internal Server Error)} if the product couldn't be updated.
+	     * @throws URISyntaxException if the Location URI syntax is incorrect.
+	     */
+	    @PutMapping("/products")
+	    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) throws URISyntaxException {
+	        log.debug("REST request to update Product : {}", product);
+	        if (product.getId() == null) {
+	            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+	        }
+	        
+	        Product result = null;
+	        // check if product price change, then create new object with new price and keep the current object with old price with OUTDATE status
+	        Product currentProduct = productService.findOne(product.getId()).get();
+	        if (currentProduct != null && product.getPrice() != null && currentProduct.getPrice() != null 
+	                && ProductStatus.CURRENT.compareTo(product.getStatus()) == 0 && currentProduct.getPrice().compareTo(product.getPrice()) != 0) {
+	            product.setId(null); // create new record
+	            product.setStatus(ProductStatus.CURRENT);
+	            result = productService.save(product);
+	
+	            // outdate current product
+	            currentProduct.setStatus(ProductStatus.OUTDATE);
+	            productService.save(currentProduct);
+	        } else {
+	            result = productService.save(product);
+	        }
+	
+	        return ResponseEntity.ok()
+	            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, product.getId().toString()))
+	            .body(result);
+	    }
+
+After many product update, the results is below:
+![Product Price Update Rule](https://github.com/dqvn/nabdemo/blob/master/imgs/productPrizeUpdateRule.png)
+

@@ -136,6 +136,10 @@ Output:
 cd ${PROJECT_HOME}/gateway
 ./mvnw
 
+Login with Okta
+![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-CMS-login.png)
+
+Check the Gateway Status
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-status.png)
 
 3. Run Product Service

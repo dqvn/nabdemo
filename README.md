@@ -438,3 +438,57 @@ After many product update, the results is below:
 And the DB Entity log as below:
 
 ![Product Price Update Log](https://github.com/dqvn/nabdemo/blob/master/imgs/productPrizeUpdateLog.png)
+
+
+# Demonstrate inter-service communication between these services
+
+To help demo the inter-service communication between product service & cart service, I choose the user case that after user choose the product and he/she wants to add to cart: the cart service must call to product service to check if product is existed or not. And in case existed, it will get the price from product service and multiply with quantity of this product in cart -> then cart service will update the final (total price) number for this item as this code below:
+
+Firstly, I have to registry the FeignClient an API call to "product" service and indicate correct /api/products API from product service to get data
+
+	import org.springframework.web.bind.annotation.RequestMapping;
+	
+	import com.nab.cart.client.AuthorizedFeignClient;
+	import com.nab.cart.service.dto.Product;
+	
+	@AuthorizedFeignClient(name = "product")
+	interface ProductServiceClient {
+	
+	  @RequestMapping(value = "/api/products")
+	  Product[] getProductFromProductService();
+	  
+	}
+
+
+After that, from any Cart services/controllers, I could do inter-service call between these services:
+
+	     * {@code POST  /order-items} : Create a new orderItem.
+	     *
+	     * @param orderItem the orderItem to create.
+	     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new orderItem, or with status {@code 400 (Bad Request)} if the orderItem has already an ID.
+	     * @throws URISyntaxException if the Location URI syntax is incorrect.
+	     */
+	    @PostMapping("/order-items")
+	    public ResponseEntity<OrderItem> createOrderItem(@Valid @RequestBody OrderItem orderItem) throws URISyntaxException {
+	        log.debug("REST request to save OrderItem : {}", orderItem);
+	        if (orderItem.getId() != null) {
+	            throw new BadRequestAlertException("A new orderItem cannot already have an ID", ENTITY_NAME, "idexists");
+	        }
+	        
+	        // calling other product service to get all products and do filtering
+	        Product[] product = productServiceClient.getProductFromProductService();
+	        for (Product p : product) {
+	        	if (p.getName().equalsIgnoreCase(orderItem.getProductName().trim()) && p.getStatus().equalsIgnoreCase("CURRENT")) {
+	        		log.info("Found product from Product service: " + p.toString());
+	        		orderItem.setTotalPrice(p.getPrice().multiply(new BigDecimal(orderItem.getQuantity())));
+	        		log.info("#### Total price of this order: " + orderItem.getTotalPrice());
+	        	}
+			}
+	        
+	        OrderItem result = orderItemService.save(orderItem);
+	        return ResponseEntity.created(new URI("/api/order-items/" + result.getId()))
+	            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
+	            .body(result);
+	    }
+
+        

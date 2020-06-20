@@ -130,11 +130,13 @@ Output:
 [ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:b6b50b9231fb86b4687ac474265dce40' already registered
 [ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'cart:e8d162b849e0493be4042a397b445c1c' already registered
 
+![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Registry-status.png)
+
 2. Run Gateway (Zuul) and open localhost:8080 with proposed account
 cd ${PROJECT_HOME}/gateway
 ./mvnw
 
-
+![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-status.png)
 
 3. Run Product Service
 cd ${PROJECT_HOME}/product

@@ -85,20 +85,22 @@ By my familiar with Microservices stacks and the freestyle requirement to use fr
 # Project Build environments
 
 JAVA & MAVEN:
-$ mvn -v
-Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T02:00:29+07:00)
-Maven home: /usr/local/Cellar/maven/3.6.1/libexec
-Java version: 11.0.4, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-11.0.4.jdk/Contents/Home
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "10.15.5", arch: "x86_64", family: "mac"
 
-NPM:
-$ npm -v
-6.14.4
-
-NODE:
-$ node -v
-v12.18.0
+----------------------------------------------------------
+	$ mvn -v
+	Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T02:00:29+07:00)
+	Maven home: /usr/local/Cellar/maven/3.6.1/libexec
+	Java version: 11.0.4, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-11.0.4.jdk/Contents/Home
+	Default locale: en_US, platform encoding: UTF-8
+	OS name: "mac os x", version: "10.15.5", arch: "x86_64", family: "mac"
+	
+	NPM:
+	$ npm -v
+	6.14.4
+	
+	NODE:
+	$ node -v
+	v12.18.0
 
 # Technologies that are used in this project:
 

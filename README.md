@@ -9,71 +9,72 @@ Read requirements and do design & sperate components based on JDL-Studio
 
 # Modeling microservice entities in JDL: This is the full entities:
 
-/** Product sold by the Online store */
-entity Product {
-    name String required
-    brand ProductBrand required
-    price BigDecimal required min(0)
-    productColor ProductColor required
-    productSize Size
-    status ProductStatus required
-}
-
-enum ProductColor {
-    RED, GREEN, YELLOW, GREY, WHITE, ORANGE
-}
-
-enum ProductBrand {
-    JUNO, LV, KAFPA, CROSS, NOUS, JK, ADV
-}
-
-enum ProductStatus {
-    CURRENT, OUTDATE
-}
-
-enum Size {
-    S, M, L, XL, XXL
-}
-
-entity ProductCategory {
-    name String required
-    description String
-}
-
-relationship OneToMany {
-   ProductCategory{product} to Product{productCategory(name)}
-}
-
-service Product, ProductCategory with serviceClass
-paginate Product, ProductCategory with pagination
-filter Product, ProductCategory
-microservice Product, ProductCategory with product
-
-entity ProductOrder {
-    placedDate Instant required
-    status OrderStatus required
-    code String required
-    customer String required
-}
-
-enum OrderStatus {
-    PENDING, COMPLETED, CANCELLED
-}
-
-entity OrderItem {
-    quantity Integer required min(0)
-    totalPrice BigDecimal required min(0)
-    status OrderItemStatus required
-    productName String required
-}
-
-enum OrderItemStatus {
-    AVAILABLE, OUT_OF_STOCK, BACK_ORDER
-}
-
-relationship OneToMany {
-   ProductOrder{orderItem} to OrderItem{order(code) required}
-}
+----------------------------------------------------------
+	/** Product sold by the Online store */
+	entity Product {
+	    name String required
+	    brand ProductBrand required
+	    price BigDecimal required min(0)
+	    productColor ProductColor required
+	    productSize Size
+	    status ProductStatus required
+	}
+	
+	enum ProductColor {
+	    RED, GREEN, YELLOW, GREY, WHITE, ORANGE
+	}
+	
+	enum ProductBrand {
+	    JUNO, LV, KAFPA, CROSS, NOUS, JK, ADV
+	}
+	
+	enum ProductStatus {
+	    CURRENT, OUTDATE
+	}
+	
+	enum Size {
+	    S, M, L, XL, XXL
+	}
+	
+	entity ProductCategory {
+	    name String required
+	    description String
+	}
+	
+	relationship OneToMany {
+	   ProductCategory{product} to Product{productCategory(name)}
+	}
+	
+	service Product, ProductCategory with serviceClass
+	paginate Product, ProductCategory with pagination
+	filter Product, ProductCategory
+	microservice Product, ProductCategory with product
+	
+	entity ProductOrder {
+	    placedDate Instant required
+	    status OrderStatus required
+	    code String required
+	    customer String required
+	}
+	
+	enum OrderStatus {
+	    PENDING, COMPLETED, CANCELLED
+	}
+	
+	entity OrderItem {
+	    quantity Integer required min(0)
+	    totalPrice BigDecimal required min(0)
+	    status OrderItemStatus required
+	    productName String required
+	}
+	
+	enum OrderItemStatus {
+	    AVAILABLE, OUT_OF_STOCK, BACK_ORDER
+	}
+	
+	relationship OneToMany {
+	   ProductOrder{orderItem} to OrderItem{order(code) required}
+	}
 
 # Generate project by JH
 

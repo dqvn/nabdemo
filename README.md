@@ -388,4 +388,4 @@ From the API document (Swagger), I could do search, filter, sorting based on any
 
 As a result, you will have a curl call as below:
 
-	curl -X GET "http://localhost:8080/services/product/api/products?brand.equals=NOUS&brand.notEquals=KAFPA&id.lessThan=50&id.notEquals=20&price.greaterThan=300000&productColor.in=YELLOW&productColor.notIn=RED&productSize.notIn=M&size=10&sort=productSize%2Casc&status.in=CURRENT"
+	curl -X GET "http://localhost:8080/services/product/api/products?brand.equals=NOUS&brand.notEquals=KAFPA&id.lessThan=50&id.notEquals=20&price.greaterThan=300000&productColor.in=YELLOW&productColor.notIn=RED&productSize.notIn=M&status.in=CURRENT&page=1&size=10&sort=productSize%2Casc"

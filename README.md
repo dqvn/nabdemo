@@ -194,6 +194,12 @@ Output:
 ----------------------------------------------------------
 
 # Login with Okta
+
+After all services have been launched, I will login to CMS Admin page as url below:
+http://localhost:8080
+
+If this is the first time you login, it will redirect you to the Okta website (OIDC/OAUTH2) to authenticate & Authorization your credential.
+
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-CMS-login.png)
 
 Check the Gateway Status

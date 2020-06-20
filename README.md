@@ -376,8 +376,7 @@ This will show all Entity Audit log (VIEW, UPDATE, CREATE, DELETE events)
 
 ![Product Entity Activity Audits](https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditLog.png)
 
-To help me do this, I wrote a class (EntityAuditEventListener.java) based on PostLoad, PostCreate, PostUpdate events from java.persistence.* class
-By using try-catch, it will not affect to user behavior while using the application whenever the log events is fail or broken.
+To help me do this, I wrote a class (EntityAuditEventListener.java) based on PostLoad, PostCreate, PostUpdate events from java.persistence.* class. By using try-catch, it will not crash user behavior while using the application whenever the log events is fail or broken.
 
 ![EntityAuditEventListener.java](https://github.com/dqvn/nabdemo/blob/master/imgs/EntityAuditEventListener.png)
 

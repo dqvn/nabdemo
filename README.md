@@ -483,7 +483,7 @@ After that, from any Cart services/controllers, I could do inter-service call be
 	        		orderItem.setTotalPrice(p.getPrice().multiply(new BigDecimal(orderItem.getQuantity())));
 	        		log.info("#### Total price of this order: " + orderItem.getTotalPrice());
 	        	}
-			}
+	        }
 	        
 	        OrderItem result = orderItemService.save(orderItem);
 	        return ResponseEntity.created(new URI("/api/order-items/" + result.getId()))
@@ -491,4 +491,3 @@ After that, from any Cart services/controllers, I could do inter-service call be
 	            .body(result);
 	    }
 
-        

@@ -167,7 +167,16 @@ Output:
 	cd ${PROJECT_HOME}/gateway
 	./mvnw
 ----------------------------------------------------------
-Login with Okta
+
+Output:
+----------------------------------------------------------
+	Application 'gateway' is running! Access URLs:
+	Local: 		http://localhost:8080/
+	External: 	http://127.0.0.1:8080/
+	Profile(s): 	[dev, swagger]
+----------------------------------------------------------
+
+# Login with Okta
 ![Registry Status](https://github.com/dqvn/nabdemo/blob/master/imgs/Gateway-CMS-login.png)
 
 Check the Gateway Status

@@ -121,6 +121,7 @@ v12.18.0
 ----------------------------------------------------------
 
 Output:
+
 ----------------------------------------------------------
 	Application 'jhipster-registry' is running! Access URLs:
 	Local: 		http://localhost:8761/
@@ -129,6 +130,7 @@ Output:
 ----------------------------------------------------------
 
 Registry log checking:
+
 	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'product:466e8776e7e19b6b97e5412e23e7c270' already registered
 	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'gateway:b6b50b9231fb86b4687ac474265dce40' already registered
 	[ry-scheduling-2] i.g.j.r.service.ZuulUpdaterService       : Instance 'cart:e8d162b849e0493be4042a397b445c1c' already registered
